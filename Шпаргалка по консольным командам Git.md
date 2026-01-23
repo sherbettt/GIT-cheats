@@ -280,6 +280,13 @@ git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short # мой фо
 git log master..branch_99  # показать коммиты из ветки branch_99, которые не влиты в master
 git log branch_99..master  # показать коммиты из ветки master, которые не влиты в branch_99
 git log master...branch_99 --boundary -- graph # показать коммиты из указанных веток, начиная с их расхождения (коммит расхождения будет показан)
+
+# Посмотреть разницу между локальной и удаленной веткой
+git log --oneline origin/main..main    # что есть у вас, но нет на удаленном
+git log --oneline main..origin/main    # что есть на удаленном, но нет у вас
+
+# Или визуально
+git log --graph --oneline --all
 ```
 
 ``` bash
@@ -368,6 +375,22 @@ git push origin --tags
 
 # Все аннотированные теги
 git push origin --follow-tags
+
+# ТОЛЬКО если вы уверены, что хотите перезаписать удаленную историю
+git push --force origin main
+
+# Проверяет, не изменился ли удаленный репозиторий с момента вашего fetch
+git push --force-with-lease origin main
+
+#------------
+# Сначала сделайте pull
+git pull git@gitflic.ru:kkorablin/git-cheats.git main
+
+# Или если хотите явно указать стратегию слияния
+git pull --no-ff git@gitflic.ru:kkorablin/git-cheats.git main
+
+# Затем push
+git push git@gitflic.ru:kkorablin/git-cheats.git main
 ```
 
 Pull тегов с удаленного репозитория
@@ -380,6 +403,8 @@ git fetch --all --tags
 
 # Получить изменения включая теги
 git pull --tags
+
+git pull origin main  
 ```
 
 Проверка тегов
