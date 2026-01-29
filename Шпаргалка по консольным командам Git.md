@@ -464,6 +464,22 @@ git pull origin            # влить изменения с удалённог
 git pull origin master     # влить изменения с удалённого репозитория (только указанная ветка)
 ```
 
+ Удаленные ветки на origin
+```bash
+git ls-remote
+```
+
+Поиск файла JenkinsFile_tag_release в дереве Git
+```bash
+git ls-tree -r HEAD | grep JenkinsFile_tag_release
+```
+
+Просмотр содержимого JenkinsFile_tag_release
+```bash
+git show HEAD:JenkinsFile_tag_release
+git show HEAD:vars/JenkinsFile_tag_release | head -20
+```
+
 
 ### Конфликт слияния
 
