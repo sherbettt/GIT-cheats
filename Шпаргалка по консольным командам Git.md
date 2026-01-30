@@ -52,6 +52,12 @@ Git — система контроля версий (файлов). Что-то
 ```
 git config --global user.name "Your Name" # указать имя, которым будут подписаны коммиты
 git config --global user.email "e@w.com"  # указать электропочту, которая будет в описании коммитера
+
+git config --local user.name "Кирилл Кораблин"
+git config --local user.email "k@runtel.ru"
+
+git config user.name "Кирилл Кораблин"
+git config user.email "k@runtel.ru"
 ```
 
 Если вы в Windows:
